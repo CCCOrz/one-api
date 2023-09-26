@@ -1,12 +1,11 @@
 name: Linux Release
 permissions:
   contents: write
-
+  
 on:
   push:
     tags:
-      - '*'
-      - '!*-alpha*'
+      - v*
 jobs:
   release:
     runs-on: ubuntu-latest

@@ -3,8 +3,7 @@ name: Publish Docker image (arm64)
 on:
   push:
     tags:
-      - '*'
-      - '!*-alpha*'
+      - v*
   workflow_dispatch:
     inputs:
       name:
@@ -49,7 +48,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            justsong/one-api
+            durianice/one-api
             ghcr.io/${{ github.repository }}
 
       - name: Build and push Docker images
